@@ -16,7 +16,9 @@ const Styled = styled.header`
   .logo {
     display: flex;
     align-items: center;
+
     &_title {
+      margin-left: 5px;
       font-size: 30px;
       color: #041e42;
       font-weight: 700;
@@ -39,6 +41,11 @@ const Styled = styled.header`
         color: #041e42;
         font-weight: 700;
       }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .header_top p {
+      font-size: 12px;
     }
   }
 `;

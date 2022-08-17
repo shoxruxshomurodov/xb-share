@@ -37,6 +37,11 @@ const Styled = styled.nav`
       }
     }
   }
+  @media screen and (max-width: 1280px) {
+    .breadcrumb_info__item__text {
+      font-size: 12px;
+    }
+  }
 `;
 
 const Breadcrumb = ({ ...rest }) => {
