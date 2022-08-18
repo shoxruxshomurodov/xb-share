@@ -25,7 +25,7 @@ const Styled = styled.form`
     width: 26px;
     height: 26px;
     color: #000;
-    right: 35px;
+    right: 25px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
