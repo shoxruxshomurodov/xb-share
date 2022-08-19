@@ -44,6 +44,9 @@ const Navbar = () => {
           sm={6}
           xs={6}
           className="logo"
+          style={{
+            padding: "0px",
+          }}
         >
           <img src={LogoImage} className="logo_image" />
           <h2 className="logo_title">ShareXalq</h2>
@@ -63,6 +66,9 @@ const Navbar = () => {
           </Col>
         </Hidden>
         <Col
+          style={{
+            padding: "0px",
+          }}
           justify="end"
           align="end"
           xxl={1}

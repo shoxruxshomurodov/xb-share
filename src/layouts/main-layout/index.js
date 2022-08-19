@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Col, Container, Hidden, Row } from "react-grid-system";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import Aside from "../../components/aside";
 import Breadcrumb from "../../components/breadcrumb";
+import EventSlider from "../../components/event-slider";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header";
 import Navbar from "../../components/navbar";
@@ -13,10 +15,10 @@ const Styled = styled.div`
     padding: 0 50px;
   }
   .breadcrumb {
-    padding: 10px 50px;
-  }
-  .breadcrumb {
     background-color: #f3f3f3;
+  }
+  .page_container {
+    padding-right: 50px;
   }
   @media screen and (max-width: 1280px) {
     .container {
@@ -36,36 +38,26 @@ const Styled = styled.div`
   }
 `;
 const MainLayout = () => {
-  const [isOpen, setOpen] = useState(true);
-  const sidebarHandler = () => {
-    setOpen(!isOpen);
-  };
   return (
     <Styled>
       <Container fluid>
         <Header />
-        <div className="container">
-          <Navbar />
-        </div>
+        <Navbar />
         <Breadcrumb />
-        <Row className="container" justify="between">
+        <Row>
           <Hidden sm xs>
-            <Col
-              md={isOpen ? 2 : 0.75}
-              style={{
-                borderRight: "1px solid #f3f3f3",
-                paddingTop: "15px",
-              }}
-            >
-              <Sidebar isOpen={isOpen} sidebarHandler={sidebarHandler} />
-            </Col>
+            <Aside />
           </Hidden>
+          <Col>
+            <Outlet />
+          </Col>
           <Col
+            md={1.5}
             style={{
-              paddingTop: "15px",
+              padding: 0,
             }}
           >
-            <Outlet />
+            <EventSlider />
           </Col>
         </Row>
         <Footer />
