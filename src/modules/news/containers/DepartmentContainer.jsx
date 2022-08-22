@@ -132,7 +132,7 @@ const Styled = styled.div`
     }
   }
 `;
-const NewsContainer = () => {
+const DepartmentContainer = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const setBreadcrumbs = useStore((state) =>
     get(state, "setBreadcrumbs", () => {})
@@ -366,4 +366,4 @@ const NewsContainer = () => {
   );
 };
 
-export default NewsContainer;
+export default DepartmentContainer;

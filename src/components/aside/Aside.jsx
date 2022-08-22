@@ -82,33 +82,30 @@ const Aside = () => {
             </svg>
           }
         >
-          <MenuParent title={"The First Section"} link={"/department-news"}>
+          <MenuParent title={"The First Section"} link={"/department"}>
             <MenuItem title="Handbook" />
-            <MenuItem title="News" />
-            <MenuItem title="Documents" />
+            <MenuItem title="News" link="/department-news" />
+            <MenuItem title="Documents" link="/department-documents" />
           </MenuParent>
-          <MenuParent title={"Software Department"} link={"/department-news"}>
+          <MenuParent title={"Software Department"} link={"/department"}>
             <MenuItem title="Handbook" />
-            <MenuItem title="News" />
-            <MenuItem title="Documents" />
+            <MenuItem title="News" link="/department-news" />
+            <MenuItem title="Documents" link="/department-documents" />
           </MenuParent>
-          <MenuParent title={"Risk Department"} link={"/department-news"}>
+          <MenuParent title={"Risk Department"} link={"/department"}>
             <MenuItem title="Handbook" />
-            <MenuItem title="News" />
-            <MenuItem title="Documents" />
+            <MenuItem title="News" link="/department-news" />
+            <MenuItem title="Documents" link="/department-documents" />
           </MenuParent>
-          <MenuParent title={"Strategy Department"} link={"/department-news"}>
+          <MenuParent title={"Strategy Department"} link={"/department"}>
             <MenuItem title="Handbook" />
-            <MenuItem title="News" />
-            <MenuItem title="Documents" />
+            <MenuItem title="News" link="/department-news" />
+            <MenuItem title="Documents" link="/department-documents" />
           </MenuParent>
-          <MenuParent
-            title={"Problem Loans Department"}
-            link={"/department-news"}
-          >
+          <MenuParent title={"Problem Loans Department"} link={"/department"}>
             <MenuItem title="Handbook" />
-            <MenuItem title="News" />
-            <MenuItem title="Documents" />
+            <MenuItem title="News" link="/department-news" />
+            <MenuItem title="Documents" link="/department-documents" />
           </MenuParent>
         </MenuExpanded>
       </ul>
