@@ -1,6 +1,9 @@
 import React from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import EuclidRegular from "../fonts/EuclidCircularA-Regular.woff";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { ScreenClassProvider } from "react-grid-system";
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: "Euclid";
@@ -14,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     color:#000;
     font-size: 16px;
-    line-height: 1.45;
     font-family: 'Euclid', sans-serif;
     font-weight: 400;
   }
@@ -35,13 +37,29 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
-  
+  .flex{
+    display: flex;
+  }
+  .flex-column{
+    flex-direction: column;
+  }
+  .items-center{
+    align-items: center;
+  }
+  .justify-between{
+    justify-content: space-between;
+  }
+  .h-100{
+    height: 100%;
+  }
 `;
 const Theme = ({ children }) => {
   return (
     <>
-      <GlobalStyle />
-      {children}
+      <ScreenClassProvider>
+        <GlobalStyle />
+        {children}
+      </ScreenClassProvider>
     </>
   );
 };

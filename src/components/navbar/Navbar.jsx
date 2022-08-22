@@ -6,6 +6,7 @@ import SearchInput from "../search";
 import LogoImage from "../../assets/images/logo.svg";
 
 const Styled = styled.header`
+  padding: 10px 30px;
   .logo {
     display: flex;
     align-items: center;

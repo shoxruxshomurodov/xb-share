@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 const Styled = styled.nav`
   .breadcrumb {
-    padding: 12px 50px;
+    padding: 12px 30px;
     &_list {
       display: flex;
     }
@@ -90,7 +90,7 @@ const Breadcrumb = ({ ...rest }) => {
               ))}
           </ul>
         </Col>
-        <Col md={4} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>
+        <Col md={3} sm={12} xs={12} order={{ md: 2, sm: 1, xs: 1 }}>
           <ul className="breadcrumb_info-list">
             <li className="breadcrumb_info__item">
               <span className="breadcrumb_info__item__text">USD</span>

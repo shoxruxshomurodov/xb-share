@@ -44,22 +44,18 @@ const MainLayout = () => {
         <Header />
         <Navbar />
         <Breadcrumb />
-        <Row>
-          <Hidden sm xs>
+        <div
+          style={{
+            display: "flex",
+          }}
+        >
+          <Hidden md sm xs>
             <Aside />
           </Hidden>
           <Col>
             <Outlet />
           </Col>
-          <Col
-            md={1.5}
-            style={{
-              padding: 0,
-            }}
-          >
-            <EventSlider />
-          </Col>
-        </Row>
+        </div>
         <Footer />
       </Container>
     </Styled>

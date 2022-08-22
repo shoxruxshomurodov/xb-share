@@ -7,11 +7,11 @@ import MenuParent from "./MenuParent";
 
 const Styled = styled.nav`
   position: relative;
-  width: ${({ isOpen }) => (isOpen ? "350px" : "60px")};
+  width: ${({ isOpen }) => (isOpen ? "330px" : "80px")};
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   -ms-transition: -ms-transform 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
-  padding: ${({ isOpen }) => (isOpen ? "0 20px" : "0 5px")};
+  padding: ${({ isOpen }) => (isOpen ? "0 20px 0 30px" : "0 5px")};
   height: 22px;
   display: flex;
   justify-content: ${({ isOpen }) => (isOpen ? "" : "center")};
@@ -45,7 +45,7 @@ const Styled = styled.nav`
     }
   }
   .sidebar_menu {
-    padding-top: 40px;
+    padding-top: 45px;
     &:first-child {
       margin-top: 10px;
     }
@@ -82,17 +82,30 @@ const Aside = () => {
             </svg>
           }
         >
-          <MenuParent title={"The First Section"}>
+          <MenuParent title={"The First Section"} link={"/department-news"}>
             <MenuItem title="Handbook" />
             <MenuItem title="News" />
             <MenuItem title="Documents" />
           </MenuParent>
-          <MenuParent title={"Software Department"}>
+          <MenuParent title={"Software Department"} link={"/department-news"}>
             <MenuItem title="Handbook" />
             <MenuItem title="News" />
             <MenuItem title="Documents" />
           </MenuParent>
-          <MenuParent title={"Risk Department"}>
+          <MenuParent title={"Risk Department"} link={"/department-news"}>
+            <MenuItem title="Handbook" />
+            <MenuItem title="News" />
+            <MenuItem title="Documents" />
+          </MenuParent>
+          <MenuParent title={"Strategy Department"} link={"/department-news"}>
+            <MenuItem title="Handbook" />
+            <MenuItem title="News" />
+            <MenuItem title="Documents" />
+          </MenuParent>
+          <MenuParent
+            title={"Problem Loans Department"}
+            link={"/department-news"}
+          >
             <MenuItem title="Handbook" />
             <MenuItem title="News" />
             <MenuItem title="Documents" />

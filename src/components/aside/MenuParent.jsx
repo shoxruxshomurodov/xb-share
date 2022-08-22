@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import { NavLink } from "react-router-dom";
 const Styled = styled.li`
   .parent_menu {
     display: flex;
@@ -13,6 +13,19 @@ const Styled = styled.li`
   .parent_menu_title {
     color: ${({ expanded }) => (expanded ? "#2dc161" : "#000")};
     transition: all 0.3s ease;
+    &::after {
+      content: ">";
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: ${({ expanded }) => (expanded ? "#2dc161" : "#000")};
+      transform: ${({ expanded }) =>
+        expanded ? "rotate(90deg)" : "rotate(0deg)"};
+      -webkit-transition: -webkit-transform 0.3s ease-in-out;
+      -ms-transition: -ms-transform 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
   }
   .parent_menu_list {
     list-style-type: disc;
@@ -46,33 +59,21 @@ const Styled = styled.li`
   }
 `;
 
-const MenuParent = ({ title, children }) => {
+const MenuParent = ({ title, link = "", children }) => {
   const [expanded, setExpanded] = useState(false);
   return (
     <Styled expanded={expanded}>
-      <a
+      <NavLink
+        to={link}
         className="parent_menu"
         onClick={(prev) => {
           setExpanded(!expanded);
         }}
       >
-        <span className="parent_menu_title">{title}</span>
-        <span className="parent_menu__arrow-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </span>
-      </a>
+        <a>
+          <span className="parent_menu_title">{title}</span>
+        </a>
+      </NavLink>
       <ul className="parent_menu_list">{children}</ul>
     </Styled>
   );
